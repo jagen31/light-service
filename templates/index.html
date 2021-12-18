@@ -1,0 +1,18 @@
+<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+
+<script>
+var colorPicker = new iro.ColorPicker("#picker", {
+  // Set the size of the color picker
+  width: 320,
+})
+
+colorPicker.on('color:change', function(color) {
+  fetch("/", {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(color.rgb)
+  })
+});
+</script>
+
+<div id="picker"></div>

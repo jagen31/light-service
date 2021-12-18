@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+while read -n 3 line
+do
+  echo "$line" >> status
+done
